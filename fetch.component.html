@@ -1,0 +1,61 @@
+
+ <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NAME</th>
+          <th scope="col">PHONE</th>
+          <th scope="col">ADDRESS</th>
+          <th colspan="2" scope="col" >OPERATIONS</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let student of students">
+              <td>{{student.id}}</td><td>{{student.name}}</td><td>{{student.phone}}</td><td>{{student.address}}</td>
+              <th><a (click)="delete(student.id)" class="btn btn-primary" href="./index.html">Delete</a></th>
+              <th><button (click)="update(student.id)" class="btn btn-primary" href="">Update</button></th>
+            </tr> 
+    </tbody>
+    </table>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="updateShow">
+        <strong>Data Updated Successflly</strong> 
+        <a type="button" class="close" data-dismiss="alert" aria-label="Close" href="./index.html">
+          <span aria-hidden="true">&times;</span>
+        </a>
+        </div>
+    <div *ngIf="show">
+      <div class="alert alert-primary" role="alert">
+            Updation Form
+      </div>
+     
+        <div class="form-group">
+          <label for="exampleInputEmail1">Id</label>
+          <input type="number" class="form-control" 
+          [(ngModel)]="id" readonly>
+       
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Name</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="name" 
+           value="sohel" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Phone</label>
+          <input type="number" class="form-control" id="exampleInputPassword1" [(ngModel)]="ph"
+           value="65456">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Address</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="address"
+             value="jhg">
+        </div>
+     
+        <a  type="submit"  (click)="updatedata(id)" class="btn btn-primary"  href="./index.html">Update record</a>
+      
+    </div>
+    <script>
+      $(function(){
+        $("#updateMsz").hide(300).show(1000);
+      });
+    </script>
