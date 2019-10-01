@@ -57,8 +57,6 @@ update(id)
         i++;
 
     }
-
-
 }
 updatedata(id){
   console.log(this.id);
