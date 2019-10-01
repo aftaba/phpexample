@@ -1,11 +1,9 @@
 <?php 
 	namespace opr1;
-	
 	//include 'conn.php';
 	require_once('conn.php');
-			//$data= json_decode(file_get_contents("php://input"));
+	//$data= json_decode(file_get_contents("php://input"));
 	class Connection {
-		//public $conn1;
 		public $data1;
 		public function __construct(){
 			//$this->conn1= new mysqli("localhost","root","root","students");
@@ -63,16 +61,6 @@
 
 }
 use opr1;
-/*class Oprtn   extends Operation{
-
-	function opr($flag,$data){
-		//echo $flag;
-		//$data =$this->data1;
-	
-}
-
-}*/
-
   	$obj  = new Operation();
   	//$obj->conn();
   	 //$conn=$obj->conn1;
